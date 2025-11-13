@@ -1,19 +1,13 @@
 import * as vscode from "vscode";
-import { BundleDataWatcher } from './bundleDataWatcher';
 import { BundleVisualizerProvider } from './webview';
 
 export async function activate(context: vscode.ExtensionContext) {
- // Create the bundle data watcher
-  const watcher = new BundleDataWatcher();
-  watcher.start(context);
 
-  // Create provider and MCP with the watcher
-  const provider = new BundleVisualizerProvider(context.extensionUri, watcher);
+  const provider = new BundleVisualizerProvider(context.extensionUri);
 
   context.subscriptions.push(
     vscode.commands.registerCommand('bundleVisualizer.show', () => provider.show()),
     vscode.commands.registerCommand('bundleVisualizer.refresh', () => provider.refresh()),
-    { dispose: () => watcher.dispose() },
     { dispose: () => provider.dispose() },
   );
 
