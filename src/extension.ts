@@ -83,7 +83,19 @@ export async function activate(context: vscode.ExtensionContext) {
           ${results
             .map(
               r =>
-                `<tr><td>${r.port}</td><td>${r.url}</td><td>${r.title}</td><td>${r.docker}</td></tr>`
+                `<tr>
+                    <td>${r.port}</td>
+                    <td>
+                      ${r.url}
+                      <iframe
+
+                        src="${r.url}"
+                        allowfullscreen
+                       width="600" height="400"></iframe>
+                    </td>
+                    <td>${r.title}</td>
+                    <td>${r.docker}</td>
+                  </tr>`
             )
             .join("\n")}
           </table>
