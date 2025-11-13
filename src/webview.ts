@@ -1,6 +1,5 @@
-import { TextDecoder } from 'util';
 import * as vscode from 'vscode';
-import { PACKAGE_NAME } from './constants';
+import { detectPorts, getDockerPorts, probeTitle } from './utils';
 
 export class BundleVisualizerProvider {
   private panel: vscode.WebviewPanel | undefined;
@@ -76,27 +75,43 @@ export class BundleVisualizerProvider {
       return;
     }
 
-    const workspaceFolders = vscode.workspace.workspaceFolders;
-    if (!workspaceFolders?.length) {
-      this.panel.webview.postMessage({
-        command: 'error',
-        data: 'No workspace folder found'
+    const ports = await detectPorts();
+    const dockers = await getDockerPorts();
+    const results: any[] = [];
+
+    for (const port of ports) {
+      const { url, match } = await probeTitle(port);
+      const docker = dockers.find(d => d.published.includes(port));
+      results.push({
+        port,
+        url: url || "(no HTTP)",
+        title: match || "(no HTTP)",
+        docker: docker ? docker.name : ""
       });
-      return;
     }
 
-    const config = vscode.workspace.getConfiguration(PACKAGE_NAME);
-    const statsPath = config.get<string>('statsPath') || 'dist/stats.json';
-    const fileUri = vscode.Uri.joinPath(workspaceFolders[0].uri, statsPath);
+
+    // const workspaceFolders = vscode.workspace.workspaceFolders;
+    // if (!workspaceFolders?.length) {
+    //   this.panel.webview.postMessage({
+    //     command: 'error',
+    //     data: 'No workspace folder found'
+    //   });
+    //   return;
+    // }
+
+    // const config = vscode.workspace.getConfiguration(PACKAGE_NAME);
+    // const statsPath = config.get<string>('statsPath') || 'dist/stats.json';
+    // const fileUri = vscode.Uri.joinPath(workspaceFolders[0].uri, statsPath);
 
     try {
-      const data = await vscode.workspace.fs.readFile(fileUri);
-      const text = new TextDecoder('utf-8').decode(data);
-      const json = JSON.parse(text);
+      // const data = await vscode.workspace.fs.readFile(fileUri);
+      // const text = new TextDecoder('utf-8').decode(data);
+      // const json = JSON.parse(text);
 
       this.panel.webview.postMessage({
         command: 'updateData',
-        data: json
+        data: results
       });
     } catch (err: any) {
       this.panel.webview.postMessage({

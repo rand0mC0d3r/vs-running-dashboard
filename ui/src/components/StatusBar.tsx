@@ -7,7 +7,7 @@ interface StatusBarProps {
   hiddenRootFolders: Set<string>;
 }
 
-export const StatusBar: React.FC<StatusBarProps> = ({ bundleData, hiddenRootFolders }) => {
+export const StatusBar: React.FC<StatusBarProps> = ({ bundleData }) => {
   const isRootFolderVisible = (rootFolderName: string): boolean => {
     return !hiddenRootFolders.has(rootFolderName);
   };

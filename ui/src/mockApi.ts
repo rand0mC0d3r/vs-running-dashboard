@@ -14,39 +14,8 @@ async function loadMockData(): Promise<BundleData> {
   } catch (error) {
     console.error('Error loading mock data:', error);
     // Fallback mock data
-    return {
-      version: "5.88.2",
-      hash: "abc123def456",
-      time: 2847,
-      assets: [
-        {
-          name: "js/main.12345.js",
-          size: 245678,
-          chunks: [0],
-          chunkNames: ["main"],
-          emitted: true
-        },
-        {
-          name: "css/main.67890.css",
-          size: 45123,
-          chunks: [0],
-          chunkNames: ["main"],
-          emitted: true
-        }
-      ],
-      chunks: [
-        {
-          id: 0,
-          rendered: true,
-          initial: true,
-          entry: true,
-          size: 290801,
-          names: ["main"],
-          files: ["js/main.12345.js", "css/main.67890.css"]
-        }
-      ],
-      modules: []
-    };
+    return [{"port":53,"url":"(no HTTP)","title":"(no HTTP)","docker":""},{"port":323,"url":"(no HTTP)","title":"(no HTTP)","docker":""},{"port":1,"url":"(no HTTP)","title":"(no HTTP)","docker":""},{"port":39355,"url":"(no HTTP)","title":"(no HTTP)","docker":""},{"port":60048,"url":"(no HTTP)","title":"(no HTTP)","docker":""},{"port":6930,"url":"(no HTTP)","title":"(no HTTP)","docker":""},{"port":6099,"url":"(no HTTP)","title":"(no HTTP)","docker":""},{"port":53860,"url":"(no HTTP)","title":"(no HTTP)","docker":""},{"port":5215,"url":"(no HTTP)","title":"(no HTTP)","docker":""}]
+;
   }
 }
 

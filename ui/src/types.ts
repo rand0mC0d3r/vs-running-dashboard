@@ -23,6 +23,15 @@ export interface BundleData {
   };
 }
 
+export interface AppDataItem {
+  port: number;
+  url: string;
+  title: string;
+  docker: string
+}
+
+export type AppData = AppDataItem[];
+
 export interface TreeNode {
   name: string;
   id?: string;
