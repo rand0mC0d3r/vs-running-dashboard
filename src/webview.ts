@@ -1,7 +1,5 @@
 import { TextDecoder } from 'util';
 import * as vscode from 'vscode';
-// import { BundleDataWatcher } from './bundleDataWatcher';
-import { BundleDataWatcher } from './bundleDataWatcher';
 import { PACKAGE_NAME } from './constants';
 
 export class BundleVisualizerProvider {
@@ -9,15 +7,8 @@ export class BundleVisualizerProvider {
   private readonly extensionUri: vscode.Uri;
   private watcherDisposable: vscode.Disposable | undefined;
 
-  constructor(extensionUri: vscode.Uri, private watcher?: BundleDataWatcher) {
+  constructor(extensionUri: vscode.Uri) {
     this.extensionUri = extensionUri;
-
-    // Listen for file changes if watcher is provided
-    if (this.watcher) {
-      this.watcherDisposable = this.watcher.onChange(() => {
-        this.refresh();
-      });
-    }
   }
 
   public async show() {
