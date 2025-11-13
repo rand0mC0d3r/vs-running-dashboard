@@ -75,7 +75,12 @@ export async function activate(context: vscode.ExtensionContext) {
 
         // Build simple HTML table
         const html = `
+          <!DOCTYPE html>
           <html>
+          <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="Content-Security-Policy" content="default-src 'none'; frame-src http: https:; style-src 'unsafe-inline'; script-src 'unsafe-inline';">
+          </head>
           <body style="font-family: sans-serif;">
           <h2>Discovered UI Ports</h2>
           <table border="1" cellspacing="0" cellpadding="4">
@@ -88,7 +93,7 @@ export async function activate(context: vscode.ExtensionContext) {
                     <td>
                       ${r.url}
                       <iframe
-
+                        allow="clipboard-read; clipboard-write, fullscreen; web-share, camera; microphone, payment, ambient-light-sensor; accelerometer; gyroscope; magnetometer; display-capture"
                         src="${r.url}"
                         allowfullscreen
                        width="600" height="400"></iframe>
@@ -105,7 +110,11 @@ export async function activate(context: vscode.ExtensionContext) {
           "discoverUI",
           "Discovered UI Ports",
           vscode.ViewColumn.Active,
-          {}
+          {
+            enableScripts: true,
+            enableForms: true,
+            retainContextWhenHidden: true
+          }
         );
         panel.webview.html = html;
       }
