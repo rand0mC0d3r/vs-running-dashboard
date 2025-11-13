@@ -1,0 +1,56 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  /* Development mode: VS Code theme colors */
+  --vscode-editor-background: #1e1e1e;
+  --vscode-editor-foreground: #d4d4d4;
+  --vscode-panel-background: #252526;
+  --vscode-panel-border: #2d2d30;
+  --vscode-panelTitle-activeForeground: #e7e7e7;
+  --vscode-button-background: #0e639c;
+  --vscode-button-foreground: #ffffff;
+  --vscode-button-hoverBackground: #1177bb;
+  --vscode-errorForeground: #f48771;
+  --vscode-inputValidation-errorBackground: #5a1d1d;
+  --vscode-inputValidation-errorBorder: #be1100;
+  --vscode-descriptionForeground: #cccccc99;
+  --vscode-symbolIcon-keywordForeground: #569cd6;
+  --vscode-editor-font-family: 'Consolas', 'Courier New', monospace;
+  --vscode-editor-font-size: 14px;
+
+  /* Scrollbar colors */
+  --vscode-scrollbarSlider-background: rgba(121, 121, 121, 0.4);
+  --vscode-scrollbarSlider-hoverBackground: rgba(121, 121, 121, 0.7);
+  --vscode-scrollbarSlider-activeBackground: rgba(121, 121, 121, 0.8);
+}
+
+/* Light theme scrollbar colors */
+.theme-light {
+  --vscode-scrollbarSlider-background: rgba(0, 0, 0, 0.2);
+  --vscode-scrollbarSlider-hoverBackground: rgba(0, 0, 0, 0.4);
+  --vscode-scrollbarSlider-activeBackground: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--vscode-editor-background);
+  color: var(--vscode-editor-foreground);
+}
+
+#root {
+  height: 100vh;
+  width: 100%;
+}
