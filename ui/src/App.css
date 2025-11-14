@@ -97,6 +97,37 @@
   padding-left: 0;
 }
 
+.toolbar-button {
+  padding: 4px 8px;
+  background-color: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.toolbar-button:hover {
+  background-color: var(--vscode-button-hoverBackground);
+}
+
+.toolbar-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toolbar-button:disabled:hover {
+  background-color: var(--vscode-button-background);
+}
+
+.toolbar-button.active {
+  background-color: var(--vscode-button-secondaryBackground);
+  color: var(--vscode-button-secondaryForeground);
+  border: 1px solid var(--vscode-button-border);
+}
 
 .toolbar-label {
   font-size: 11px;
@@ -135,7 +166,6 @@
   padding: 40px;
   margin: 16px;
 }
-
 
 
 /* Status bar */
@@ -233,4 +263,10 @@
 
 .app-panel-content {
   flex: 1;
+}
+
+/* Resize handle for side panel */
+.side-panel {
+  resize: horizontal;
+  overflow: auto;
 }
