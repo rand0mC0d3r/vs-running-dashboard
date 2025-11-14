@@ -6,6 +6,8 @@ export class BundleVisualizerProvider {
   private readonly extensionUri: vscode.Uri;
   private watcherDisposable: vscode.Disposable | undefined;
 
+  private items: any[] = [];
+
   constructor(extensionUri: vscode.Uri) {
     this.extensionUri = extensionUri;
   }
@@ -89,6 +91,7 @@ export class BundleVisualizerProvider {
     }
 
     try {
+      this.items = results;
       this.panel.webview.postMessage({
         command: 'updateData',
         data: results
@@ -171,7 +174,7 @@ export class BundleVisualizerProvider {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource} 'unsafe-inline'; script-src 'nonce-${nonce}';">
+      <meta http-equiv="Content-Security-Policy" content="default-src 'none'; frame-src http: https: ${webview.cspSource}; style-src ${webview.cspSource} 'unsafe-inline'; script-src 'nonce-${nonce}';">
         ${cssTags}
         <title>🔍 Bundle Visualizer</title>
     </head>

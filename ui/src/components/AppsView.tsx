@@ -22,7 +22,15 @@ export const AppsView: React.FC<AppsViewProps> = ({
       padding: '8px'
     }}>
       {appsData.map(dataItem => <AppPanel title={`${dataItem.title} ${dataItem.url} (${dataItem.port})`} key={dataItem.port} >
-        {dataItem.url.length > 0 && <iframe src={dataItem.url} title={dataItem.title} style={{ width: '100%', height: '100%', border: 0, padding: 0 }} />}
+        {(dataItem.url.startsWith('http://') || dataItem.url.startsWith('https://')) ? (
+          <iframe
+            src={dataItem.url}
+            title={dataItem.title}
+            style={{ width: '100%', height: '100%', border: 0, padding: 0 }}
+          />
+        ) : (
+          <div style={{ padding: 8, color: '#666', fontSize: 12 }}>No embeddable HTTP(S) UI available</div>
+        )}
       </AppPanel>)}
     </div>
   </ResizablePanel>
