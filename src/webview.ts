@@ -178,9 +178,9 @@ export class BundleVisualizerProvider {
         ${cssTags}
         <title>🔍 Bundle Visualizer</title>
     </head>
-    <body>dddd
-        <div id="root"></div>
-        ${scriptTags}
+    <body>
+      <div id="root"></div>
+      ${scriptTags}
     </body>
     </html>`;
   }
