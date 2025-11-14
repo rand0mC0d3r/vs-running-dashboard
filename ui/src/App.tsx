@@ -20,9 +20,7 @@ function App() {
           </div>
         ) : bundleData ? (
           <div className="main-layout">
-
             <AppsView appsData={bundleData} />
-
           </div>
         ) : (
           <div className="loading">

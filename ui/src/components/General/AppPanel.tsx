@@ -1,17 +1,13 @@
 import React from 'react';
 
-interface ResizablePanelProps {
-  children: React.ReactNode;
-}
-
-interface ResizablePanelProps {
+interface AppPanelProps {
   title: string;
   style?: React.CSSProperties;
   children: React.ReactNode;
   titleChildren?: React.ReactNode;
 }
 
-export const ResizablePanel: React.FC<ResizablePanelProps> = ({
+export const AppPanel: React.FC<AppPanelProps> = ({
   title,
   style,
   children,
@@ -19,8 +15,8 @@ export const ResizablePanel: React.FC<ResizablePanelProps> = ({
 }) => {
 
   return (
-    <div className={`side-panel`} style={{ flex: '1 1 auto', ...style }}>
-      <div className="side-panel-header" style={{ minHeight: '24px'}}>
+    <div className={`app-panel`} style={{ flex: '1 1 auto', ...style }}>
+      <div className="app-panel-header" style={{ minHeight: '24px'}}>
         <h3 style={{ lineHeight: 0 }}>{title}</h3>
         {titleChildren}
       </div>

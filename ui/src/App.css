@@ -623,6 +623,16 @@
   flex-direction: column;
 }
 
+.app-panel {
+  /* width: 600px; */
+  /* min-width: 250px; */
+  /* max-width: 1200px; */
+  border: 1px solid var(--vscode-button-background);
+  background-color: var(--vscode-sideBar-background, var(--vscode-panel-background));
+  display: flex;
+  flex-direction: column;
+}
+
 .side-panel-header {
   display: flex;
   justify-content: space-between;
@@ -630,6 +640,15 @@
   padding: 0px 12px;
   border-bottom: 1px solid var(--vscode-panel-border);
   background-color: var(--vscode-sideBarSectionHeader-background, var(--vscode-panel-background));
+}
+
+.app-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 12px;
+  border-bottom: 1px solid var(--vscode-panel-border);
+  background-color: var(--vscode-button-background, var(--vscode-panel-background));
 }
 
 .side-panel-header h3 {

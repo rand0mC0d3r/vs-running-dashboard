@@ -1,49 +1,43 @@
 [
     {
         "port": 53,
-        "url": "(no HTTP)",
+        "url": "",
         "title": "(no HTTP)",
         "docker": ""
     },
     {
         "port": 323,
-        "url": "(no HTTP)",
-        "title": "(no HTTP)",
-        "docker": ""
-    },
-    {
-        "port": 1,
-        "url": "(no HTTP)",
+        "url": "",
         "title": "(no HTTP)",
         "docker": ""
     },
     {
         "port": 39355,
-        "url": "(no HTTP)",
+        "url": "https://www.meetup.com/home/",
         "title": "(no HTTP)",
         "docker": ""
     },
     {
         "port": 60048,
-        "url": "(no HTTP)",
+        "url": "https://docs.mightymeld.com/docs/user-guide/code-processing",
         "title": "(no HTTP)",
         "docker": ""
     },
     {
         "port": 6930,
-        "url": "(no HTTP)",
+        "url": "https://gsmarena.com/",
         "title": "(no HTTP)",
         "docker": ""
     },
     {
         "port": 6099,
-        "url": "(no HTTP)",
+        "url": "",
         "title": "(no HTTP)",
         "docker": ""
     },
     {
         "port": 53860,
-        "url": "(no HTTP)",
+        "url": "https://rawgit.com/caplin/FlexLayout/demos/demos/v0.8/demo/index.html",
         "title": "(no HTTP)",
         "docker": ""
     },
