@@ -18,9 +18,7 @@ export const AppsView: React.FC<AppsViewProps> = ({
       gridTemplateColumns: `repeat(${Math.round(Math.sqrt(appsData.length)) + 0}, 1fr)`,
       height: '100%',
       justifyContent: 'space-between',
-      // flexDirection: 'row',
-      // flexWrap: 'wrap',
-      gap: '24px',
+      gap: '16px',
       padding: '8px'
     }}>
       {appsData.map(dataItem => <AppPanel title={`${dataItem.title} ${dataItem.url} (${dataItem.port})`} key={dataItem.port} >

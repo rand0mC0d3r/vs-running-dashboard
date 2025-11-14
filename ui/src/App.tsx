@@ -14,19 +14,18 @@ function App() {
       />}
 
       <div className="content">
-        {error ? (
-          <div className="error">
+        {error
+        ? <div className="error">
             <strong>Error:</strong> {error}
           </div>
-        ) : bundleData ? (
-          <div className="main-layout">
+        :
+        bundleData
+        ? <div className="main-layout">
             <AppsView appsData={bundleData} />
           </div>
-        ) : (
-          <div className="loading">
+        : <div className="loading">
             No bundle data available. Please open a file or refresh.
-          </div>
-        )}
+          </div>}
       </div>
     </div>
   );

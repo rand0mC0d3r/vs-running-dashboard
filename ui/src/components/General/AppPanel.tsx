@@ -15,12 +15,12 @@ export const AppPanel: React.FC<AppPanelProps> = ({
 }) => {
 
   return (
-    <div className={`app-panel`} style={{ flex: '1 1 auto', ...style }}>
+    <div className="app-panel" style={{ flex: '1 1 auto', ...style }}>
       <div className="app-panel-header" style={{ minHeight: '24px'}}>
         <h3 style={{ lineHeight: 0 }}>{title}</h3>
         {titleChildren}
       </div>
-      <div className="side-panel-content">
+      <div className="app-panel-content">
         {children}
       </div>
     </div>
