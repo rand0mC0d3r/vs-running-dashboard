@@ -35,8 +35,6 @@ export class BundleVisualizerProvider {
       }
     );
 
-    // Provide a tab icon for the webview panel. Use theme-aware URIs when possible.
-    // If you have separate light/dark icons place them under `media/` and update the names.
     try {
       const lightIcon = vscode.Uri.joinPath(this.extensionUri, 'ui', 'media', 'icon_small.png');
       const darkIcon = vscode.Uri.joinPath(this.extensionUri, 'ui', 'media', 'icon_small.png');
@@ -90,25 +88,7 @@ export class BundleVisualizerProvider {
       });
     }
 
-
-    // const workspaceFolders = vscode.workspace.workspaceFolders;
-    // if (!workspaceFolders?.length) {
-    //   this.panel.webview.postMessage({
-    //     command: 'error',
-    //     data: 'No workspace folder found'
-    //   });
-    //   return;
-    // }
-
-    // const config = vscode.workspace.getConfiguration(PACKAGE_NAME);
-    // const statsPath = config.get<string>('statsPath') || 'dist/stats.json';
-    // const fileUri = vscode.Uri.joinPath(workspaceFolders[0].uri, statsPath);
-
     try {
-      // const data = await vscode.workspace.fs.readFile(fileUri);
-      // const text = new TextDecoder('utf-8').decode(data);
-      // const json = JSON.parse(text);
-
       this.panel.webview.postMessage({
         command: 'updateData',
         data: results
